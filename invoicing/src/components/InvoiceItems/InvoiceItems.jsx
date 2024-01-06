@@ -8,9 +8,13 @@ export default function InvoiceForm() {
   const [invoice, setInvoice] = useState({})
   const [totalAmount, setTotalAmount] = useState(0)
   const params = useParams()
+  const token = localStorage.getItem("access_token");
 
   useEffect(() => {
-    fetch('http://127.0.0.1:8000/api/invoices/' + params.id)
+
+    fetch('http://127.0.0.1:8000/api/invoices/' + params.id, {
+      headers: { Authorization: `Bearer ${token}` },
+    })
       .then((res) => res.json())
       .then((parsedRes) => {
         setInvoice(parsedRes)
@@ -34,7 +38,7 @@ export default function InvoiceForm() {
     <div className="container">
       <Navbar />
       <div className="mb-3">
-        <label hmlFor="name" className="form-label">
+        <label htmlFor="name" className="form-label">
           Client Name
         </label>
         <input
@@ -46,7 +50,7 @@ export default function InvoiceForm() {
         ></input>
       </div>
       <div className="mb-3">
-        <label hmlFor="date" className="form-label">
+        <label htmlFor="date" className="form-label">
           Date
         </label>
         <input

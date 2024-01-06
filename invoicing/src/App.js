@@ -5,8 +5,9 @@ import InvoiceList from './components/InvoiceList/InvoiceList';
 import InvoiceForm from "./components/InvoiceForm/InvoiceForm";
 import InvoiceItems from "./components/InvoiceItems/InvoiceItems";
 import ItemForm from "./components/ItemForm/ItemForm";
-import LoginPage from './LoginPage/LoginPage';
-import RegisterPage from './RegisterPage/RegisterPage';
+import LoginPage from './components/LoginPage/LoginPage';
+import RegisterPage from './components/RegisterPage/RegisterPage';
+
 function App() {
   return (
     <div className="App">
